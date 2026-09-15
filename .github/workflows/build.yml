@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 环境信息
+        run: g++ --version | head -1 && make --version | head -1
+      - name: 语法检查
+        run: make check
+      - name: 编译并运行
+        run: make run
+      - name: 跑全部断言测试
+        run: make test
