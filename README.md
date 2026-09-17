@@ -25,8 +25,20 @@ git commit    提交信息写成「能解释的一句话」
 include/   声明（每个数据结构一个头文件）
 src/       实现（main.cpp 只做调用和打印）
 tests/     assert 断言测试
+c/         C 语言练习区（Visual Studio 项目，如 c/table = 顺序表）
 bin/       编译产物（已 gitignore）
 ```
+
+## C 练习区怎么用（Windows + Visual Studio）
+
+本机没有 g++/make，所以 C 练习用 **Visual Studio**（已装，`D:\Visual Studio`）：
+
+1. 双击打开 `c\table\table.slnx`（VS 里叫"解决方案"）
+2. 在右侧"解决方案资源管理器"里双击 `sequence.c` 开始写
+3. `Ctrl+F7` = 只编译当前文件（先看有没有语法错）；`Ctrl+F5` = 编译并运行（要有 `main()` 才能跑）
+4. 存档：在 `E:\研学之路\ds-cpp` 里 `git add -A` → `git commit -m "一句话"` → `git push`
+
+> 注意：仓库根目录的 `Makefile` / CI 只管 `src/*.cpp`（C++ 那条线），`c/` 里的 C 代码由 VS 自己编译，不参与 CI。
 
 ## 本地/服务器怎么跑
 
@@ -43,7 +55,7 @@ make test     # 编译并运行 tests/ 下所有测试
 
 | 结构 | 状态 | 备注 |
 |---|---|---|
-| 顺序表 | 进行中 | 定义/初始化/遍历/查找/插入/删除/逆置/最值/计数 |
+| 顺序表 | 进行中 | `c/table/table/sequence.c`：整份被注释掉 + 11 个编译错误（本周 F1 修） |
 | 单链表 | 未开始 | |
 | 栈 / 队列 | 未开始 | |
 | 二叉树 | 未开始 | |

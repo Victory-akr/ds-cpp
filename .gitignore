@@ -1,3 +1,17 @@
 bin/
 build/
 *.o
+.idea/
+
+# C 练习区（Visual Studio 项目）的编译缓存与产物：不进仓库
+c/**/.vs/
+c/**/x64/
+c/**/Debug/
+c/**/Release/
+c/**/*.obj
+c/**/*.exe
+c/**/*.pdb
+c/**/*.ilk
+c/**/*.log
+c/**/*.tlog/
+c/**/*.recipe
